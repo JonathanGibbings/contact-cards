@@ -1,5 +1,7 @@
 import "./form";
 import "./submit";
+import { fetchCards } from "./cards";
+import { toggleForm, clearForm } from "./form";
 import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,11 +13,7 @@ import { initDb, getDb, postDb } from "./database";
 
 window.addEventListener("load", function () {
   initDb();
-
-  getDb();
-  postDb("Lernantino", "learnantino@test.com", 8186601234, "Bear");
-  getDb();
-
+  fetchCards();
   document.getElementById("logo").src = Logo;
   document.getElementById("bearThumbnail").src = Bear;
   document.getElementById("dogThumbnail").src = Dog;
